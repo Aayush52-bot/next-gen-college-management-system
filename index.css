@@ -1,0 +1,598 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif; /* Switched to Montserrat for a modern look */
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Navigation */
+nav {
+    background: #2c3e50; /* Kept your color */
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2); /* Added shadow for depth */
+}
+
+.logo {
+    font-size: 1.8rem; /* Slightly larger */
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem; /* Increased gap for better spacing */
+    list-style: none;
+}
+
+.nav-links a {
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s, transform 0.3s; /* Added transform transition */
+}
+
+.nav-links a:hover {
+    color: #3498db; /* Kept your hover color */
+    transform: translateY(-2px); /* Subtle lift effect */
+}
+
+/* Slideshow (Unchanged as requested) */
+.slideshow {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s;
+    background-size: cover;
+    background-position: center;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 1rem;
+    max-width: 50%;
+}
+
+/* Marquee Cards Section */
+.marquee-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    background: #fff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* Enhanced shadow */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.marquee-card {
+    background: #ffffff;
+    border: none; /* Removed border for cleaner look */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    transition: transform 0.3s ease; /* Added hover effect */
+}
+
+.marquee-card:hover {
+    transform: translateY(-10px); /* Lift on hover */
+}
+
+.marquee-card-header {
+    background: #3498db; /* Kept your color */
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    font-weight: 600;
+    border-bottom: none; /* Removed border */
+}
+
+.marquee-card-body {
+    padding: 1rem;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.marquee-content {
+    height: 100%;
+    overflow-y: hidden; /* Changed to hidden for animation */
+}
+
+.marquee-content ul {
+    list-style: none;
+    animation: marquee 12s linear infinite; /* Added marquee animation */
+}
+
+.marquee-content li {
+    padding: 0.75rem 0; /* Increased padding */
+    border-bottom: 1px solid #eee; /* Lighter border */
+    font-size: 1rem;
+}
+
+.marquee-content li:last-child {
+    border-bottom: none;
+}
+
+@keyframes marquee {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100%); }
+}
+
+/* Sections */
+section {
+    padding: 3rem 2rem; /* Increased padding */
+    margin: 2rem 0;
+}
+
+.about, .gallery, .contact {
+    background: #fff;
+    padding: 3rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* Enhanced shadow */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: 2.5rem; /* Larger title */
+    color: #2c3e50; /* Kept your color */
+    font-weight: 700;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    width: 60px;
+    height: 4px;
+    background: #3498db; /* Accent color */
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Programs Section */
+.programs {
+    padding: 4rem 2rem;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.programs-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* Added for responsiveness */
+}
+
+.program {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+    width: 23%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added hover effect */
+}
+
+.program:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.program i {
+    font-size: 2.5rem; /* Larger icon */
+    color: #3498db; /* Kept your color */
+    margin-bottom: 1rem;
+}
+
+.program h3 {
+    font-size: 1.5rem; /* Larger text */
+    color: #2c3e50; /* Kept your color */
+    margin-bottom: 1rem;
+}
+
+.program p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Faculty Section */
+.faculty {
+    padding: 4rem 2rem;
+    background-color: #fff;
+    text-align: center;
+}
+
+.faculty-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.faculty-member {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    width: 30%; /* This will be adjusted if needed */
+    transition: transform 0.3s ease;
+}
+
+.faculty-member:hover {
+    transform: translateY(-10px);
+}
+
+.faculty-member img {
+    width: 200px; /* Fixed width to match height */
+    height: 200px; /* Already 200px, kept for clarity */
+    object-fit: cover;
+    border-radius: 50%; /* Ensures a perfect circle */
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+    display: block; /* Ensures proper centering */
+    margin-left: auto;
+    margin-right: auto; /* Centers the image horizontally */
+}
+
+.faculty-member:hover img {
+    transform: scale(1.1);
+}
+
+.faculty-member h3 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.faculty-member p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 4rem 2rem;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.testimonials-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* Added for responsiveness */
+}
+
+.testimonial {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+    width: 30%;
+    transition: transform 0.3s ease; /* Added hover effect */
+}
+
+.testimonial:hover {
+    transform: translateY(-10px);
+}
+
+.testimonial p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    font-style: italic; /* Emphasized quotes */
+}
+
+.testimonial h4 {
+    font-size: 1.25rem; /* Slightly larger */
+    color: #3498db; /* Accent color */
+    margin-bottom: 0.5rem;
+}
+
+.testimonial p:last-child {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* Gallery */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem; /* Increased gap */
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Added shadow */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.4s ease; /* Smoother transition */
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Contact Section */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Increased gap */
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 1rem; /* Larger padding */
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #3498db; /* Accent color on focus */
+    outline: none;
+}
+
+.contact-form button {
+    background: #3498db; /* Kept your color */
+    color: #fff;
+    padding: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: #2980b9; /* Darker shade */
+    transform: translateY(-2px);
+}
+
+.contact-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Added shadow */
+}
+
+/* Footer */
+footer {
+    background: #2c3e50; /* Kept your color */
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+    font-size: 1rem;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2); /* Added shadow */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Consider adding a hamburger menu */
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .slide-content {
+        max-width: 80%;
+    }
+
+    .marquee-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .program, .faculty-member, .testimonial {
+        width: 100%; /* Full width on smaller screens */
+    }
+}
+
+
+/* Admissions Process Section */
+.admissions {
+    padding: 4rem 2rem;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.admissions-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.admission-step {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.admission-step:hover {
+    transform: translateY(-10px);
+}
+
+.step-number {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: #3498db; /* Accent color */
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 40px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.admission-step h3 {
+    font-size: 1.25rem;
+    color: #2c3e50; /* Theme color */
+    margin-bottom: 0.5rem;
+}
+
+.admission-step p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Campus Life Section */
+.campus-life {
+    padding: 4rem 2rem;
+    background-color: #fff;
+    text-align: center;
+}
+
+.campus-life-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.life-item {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.life-item:hover {
+    transform: translateY(-10px);
+}
+
+.life-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.life-item h3 {
+    font-size: 1.25rem;
+    color: #2c3e50; /* Theme color */
+    margin-bottom: 0.5rem;
+}
+
+.life-item p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Call-to-Action Banner */
+.cta-banner {
+    padding: 3rem 2rem;
+    background: #2c3e50; /* Theme color */
+    color: #fff;
+    text-align: center;
+}
+
+.cta-banner h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.cta-banner p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: #3498db; /* Accent color */
+    color: #fff;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #2980b9; /* Darker shade */
+    transform: translateY(-2px);
+}
+
+/* Responsive Design Updates */
+@media (max-width: 768px) {
+    .quick-links-container {
+        grid-template-columns: 1fr;
+    }
+
+    .news-container, .admissions-container, .campus-life-container {
+        grid-template-columns: 1fr;
+    }
+
+    .admission-step {
+        width: 100%;
+    }
+}

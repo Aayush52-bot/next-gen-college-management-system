@@ -1,0 +1,205 @@
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            position: relative;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Video Background */
+        video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            filter: brightness(0.7); /* Darken slightly for contrast */
+        }
+
+        /* Register Container */
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            max-width: 400px;
+            background: rgba(255, 255, 255, 0.5); /* 50% transparent background */
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(5px); /* Blur effect for readability */
+        }
+
+        /* Form Container with Scroll */
+        .form-container {
+            max-height: 70vh; /* Limit the height to enable scrolling */
+            overflow-y: auto; /* Enable vertical scrolling */
+            padding-right: 0; /* Remove padding-right since scrollbar is hidden */
+            scrollbar-width: none; /* Hide scrollbar for Firefox */
+        }
+
+        /* Hide Scrollbar for Chrome, Safari, Edge */
+        .form-container::-webkit-scrollbar {
+            display: none; /* Hide scrollbar */
+        }
+
+        /* Ensure the form container is scrollable without visible scrollbar */
+        .form-container {
+            -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+        }
+
+        /* Form Styling */
+        #register-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        #register-form h1 {
+            text-align: center;
+            font-size: 2rem;
+            color: #2c3e50;
+            font-weight: 700;
+            position: relative;
+            margin-bottom: 1rem;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); /* Shadow for better visibility */
+        }
+
+        #register-form h1::after {
+            content: '';
+            width: 50px;
+            height: 4px;
+            background: #3498db;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Success and Error Messages */
+        .success-msg {
+            color: #28a745;
+            text-align: center;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            background: rgba(255, 255, 255, 0.8); /* Slight background for readability */
+            padding: 0.5rem;
+            border-radius: 4px;
+        }
+
+        .error-msg {
+            color: #dc3545;
+            text-align: center;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            background: rgba(255, 255, 255, 0.8); /* Slight background for readability */
+            padding: 0.5rem;
+            border-radius: 4px;
+        }
+
+        /* Input Fields */
+        .input-field,
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .input-field label,
+        .input-group label {
+            font-size: 1rem;
+            color: #2c3e50;
+            font-weight: 500;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Shadow for visibility */
+        }
+
+        .input-field input,
+        .input-group input,
+        .input-group select {
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            color: #333; /* Darker text for contrast */
+            background: rgba(255, 255, 255, 0.9); /* Slightly opaque input background */
+            transition: border-color 0.3s ease;
+        }
+
+        .input-field input:focus,
+        .input-group input:focus,
+        .input-group select:focus {
+            border-color: #3498db;
+            outline: none;
+            box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+        }
+
+        /* Register Button */
+        #register-form button {
+            background: #3498db;
+            color: #fff;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        #register-form button:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        /* Register Link */
+        #register-form p {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #333; /* Darker for contrast */
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Shadow for visibility */
+        }
+
+        #register-form a {
+            color: #3498db;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        #register-form a:hover {
+            color: #2980b9;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .container {
+                width: 90%;
+                padding: 1.5rem;
+            }
+
+            #register-form h1 {
+                font-size: 1.75rem;
+            }
+
+            .input-field input,
+            .input-group input,
+            .input-group select {
+                padding: 0.6rem;
+            }
+
+            #register-form button {
+                padding: 0.6rem;
+            }
+        }

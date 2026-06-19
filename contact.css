@@ -1,0 +1,324 @@
+       /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #F9FAFB;
+            color: #2D3748;
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        /* Navbar Styles - Professional */
+        .navbar {
+            background: #1A365D;
+            padding: 0.8rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            color: #FFFFFF;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #ED8936;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #ED8936;
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 2rem;
+            background: #FFFFFF;
+            text-align: center;
+            min-height: calc(100vh - 120px);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1A365D;
+            margin-bottom: 2rem;
+            position: relative;
+            letter-spacing: 0.5px;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 50px;
+            height: 3px;
+            background: #ED8936;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .contact-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        /* Contact Info - Top Section */
+        .contact-details {
+            background: #F9FAFB;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #E2E8F0;
+            width: 100%;
+        }
+
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            text-align: left;
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .contact-info-icon {
+            color: #ED8936;
+            font-size: 1.2rem;
+            margin-top: 0.2rem;
+        }
+
+        .contact-info-content h4 {
+            font-size: 1.1rem;
+            color: #1A365D;
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-info-content p, 
+        .contact-info-content a {
+            font-size: 0.95rem;
+            color: #4A5568;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info-content a:hover {
+            color: #ED8936;
+            text-decoration: underline;
+        }
+
+        .codes {
+            font-size: 0.85rem;
+            color: #718096;
+            border-top: 1px solid #E2E8F0;
+            padding-top: 1.5rem;
+            margin-top: 1.5rem;
+            text-align: center;
+            font-style: italic;
+        }
+
+        /* Contact Form - Bottom Section */
+        .contact-form-container {
+            background: #F9FAFB;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #E2E8F0;
+            width: 100%;
+        }
+
+        .contact-form {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact-form h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1A365D;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            text-align: left;
+        }
+
+        .form-group label {
+            font-size: 0.95rem;
+            color: #4A5568;
+            font-weight: 500;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #E2E8F0;
+            border-radius: 5px;
+            font-size: 0.95rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #ED8936;
+            box-shadow: 0 0 5px rgba(237, 137, 54, 0.2);
+            outline: none;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .contact-form button {
+            background: #1A365D;
+            color: #FFFFFF;
+            padding: 0.9rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+            margin-top: 0.5rem;
+        }
+
+        .contact-form button:hover {
+            background: #15304B;
+            transform: translateY(-2px);
+        }
+
+        .form-message {
+            margin: 1rem 0;
+            font-size: 0.95rem;
+            text-align: center;
+            padding: 0.8rem;
+            border-radius: 5px;
+        }
+
+        .form-message.success {
+            color: #2F855A;
+            background: #E6FFEB;
+            border: 1px solid #C6F6D5;
+        }
+
+        .form-message.error {
+            color: #C53030;
+            background: #FFF5F5;
+            border: 1px solid #FED7D7;
+        }
+
+        /* Footer */
+        footer {
+            background: #1A365D;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 1.2rem;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 0.8rem 1.5rem;
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .contact {
+                padding: 1.5rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .contact-info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animation for Fade-In Effect */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .contact-details,
+        .contact-form-container {
+            animation: fadeIn 0.6s ease forwards;
+        }

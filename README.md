@@ -45,7 +45,7 @@ To reduce manual paperwork, improve data accessibility, and provide a modern dig
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Aayush52-bot/college-management-system.git
+   git clone https://github.com/Aayush52-bot/next-gen-college-management-system
    ```
 
 2. Move the project folder to your XAMPP `htdocs` directory:
